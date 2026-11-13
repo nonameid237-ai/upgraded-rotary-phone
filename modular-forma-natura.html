@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULAR FORMA NATURA - RENTAL DESIGN & BUILD</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        twilight: {
+                            950: '#060911',
+                            900: '#090d16',
+                            800: '#111827',
+                            700: '#1e1b4b',
+                            600: '#2e1065',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* 60% Transparent Architectural Engineering Grid Background over Twilight */
+        .serene-grid-bg {
+            background-color: #060911;
+            background-image: 
+                linear-gradient(to right, rgba(249, 115, 22, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(249, 115, 22, 0.12) 1px, transparent 1px),
+                radial-gradient(circle at 50% 15%, rgba(46, 16, 101, 0.5) 0%, transparent 65%);
+            background-size: 40px 40px, 40px 40px, 100% 100%;
+        }
+
+        .hero-twilight-gradient {
+            background: linear-gradient(135deg, rgba(9, 13, 22, 0.95) 0%, rgba(17, 24, 39, 0.95) 45%, rgba(30, 27, 75, 0.95) 80%, rgba(46, 16, 101, 0.95) 100%);
+        }
+
+        .orange-grad {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #d97706 100%);
+        }
+
+        .orange-text-grad {
+            background: linear-gradient(135deg, #fb923c 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: floatSlow 3.5s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 25px rgba(249, 115, 22, 0.4); }
+            50% { box-shadow: 0 0 50px rgba(249, 115, 22, 0.7); }
+        }
+        .animate-glow {
+            animation: pulseGlow 2.5s infinite;
+        }
+
+        /* Custom Accordion styling */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.active .faq-content {
+            max-height: 350px;
+        }
+    </style>
+</head>
+<body class="serene-grid-bg text-slate-100 antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-twilight-950/90 backdrop-blur-md shadow-lg border-b border-orange-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 orange-grad rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-500/30">
+                    <i class="fa-solid fa-building-shield text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-sm sm:text-base font-extrabold tracking-tight text-white block leading-tight">MODULAR FORMA NATURA</span>
+                    <span class="text-[10px] sm:text-xs font-bold orange-text-grad tracking-wider uppercase">RENTAL DESIGN & BUILD</span>
+                </div>
+            </div>
+            
+            <nav class="hidden 2xl:flex items-center space-x-5 font-semibold text-xs text-slate-300">
+                <a href="#beranda" class="hover:text-orange-400 transition">Beranda</a>
+                <a href="#master" class="hover:text-orange-400 transition">Rental, Design & Build</a>
+                <a href="#katalog" class="hover:text-orange-400 transition">Katalog & Draf Harga</a>
+                <a href="#ketentuan" class="hover:text-orange-400 transition">Syarat & Ketentuan</a>
+                <a href="#faq" class="hover:text-orange-400 transition">FAQ</a>
+                <a href="#design" class="hover:text-orange-400 transition">Design Arsitektural</a>
+                <a href="#pembangunan" class="hover:text-orange-400 transition">Tahapan Pembangunan</a>
+                <a href="#portofolio" class="hover:text-orange-400 transition">Portofolio</a>
+                <a href="#k3" class="hover:text-orange-400 transition">Standar K3</a>
+                <a href="#tim" class="hover:text-orange-400 transition">Tim Kerja</a>
+                <a href="#kontak" class="hover:text-orange-400 transition">Kantor Pusat</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="https://wa.me/6281234567890?text=Halo%20MODULAR%20FORMA%20NATURA,%20saya%20ingin%20berkonsultasi%20mengenai%20proyek%20konstruksi%20dan%20rental%20alat." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg transition text-sm flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="2xl:hidden text-slate-200 focus:outline-none p-2 rounded-xl hover:bg-white/10 transition">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden 2xl:hidden bg-twilight-900 border-b border-orange-500/20 px-6 py-5 space-y-3 shadow-xl max-h-[80vh] overflow-y-auto">
+            <a href="#beranda" class="block text-slate-200 font-semibold py-2 border-b border-white/10">Beranda</a>
+            <a href="#master" class="block text-slate-200 font-semibold py-2 border-b border-white/10">Rental, Design & Build</a>
+            <a href="#katalog" class="block text-slate-200 font-semibold py-2 border-b border-white/10">Katalog & Draf Harga</a>
+            <a href="#ketentuan" class="block text-slate-200 font-semibold py-2 border-b border-white/10">Syarat & Ketentuan</a>
+            <a href="#faq" class="block text-slate-200 font-semibold py-2 border-b border-white/10">FAQ (Pertanyaan Umum)</a>
+            <a href="#design" class="block text-slate-200 font-semibold py-2 border-b border-white/10">Design Arsitektural</a>
+            <a href="#pembangunan" class="block text-slate-200 font-semibold py-2 border-b border-white/10">Tahapan Pembangunan</a>
+            <a href="#portofolio" class="block text-slate-200 font-semibold py-2 border-b border-white/10">Portofolio Perusahaan</a>
+            <a href="#k3" class="block text-slate-200 font-semibold py-2 border-b border-white/10">Standar K3 Pekerja</a>
+            <a href="#tim" class="block text-slate-200 font-semibold py-2 border-b border-white/10">Tim Kerja Profesional</a>
+            <a href="#kontak" class="block text-slate-200 font-semibold py-2">Kantor Pusat</a>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section with 60% Grid Background -->
+    <section id="beranda" class="hero-twilight-gradient text-white py-28 lg:py-40 relative overflow-hidden border-b border-orange-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-flex items-center space-x-2 bg-orange-500/20 text-orange-300 px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase border border-orange-500/40 mb-8 backdrop-blur-md animate-float">
+                    <i class="fa-solid fa-compass-drafting text-orange-400"></i>
+                    <span>Kontemplasi Damai & Kesempurnaan Rekayasa Struktur</span>
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-4">
+                    MODULAR FORMA NATURA
+                </h1>
+                <p class="text-xl sm:text-2xl font-bold orange-text-grad mb-8 uppercase tracking-widest">
+                    RENTAL DESIGN & BUILD
+                </p>
+                <p class="text-base sm:text-lg text-slate-300 mb-10 leading-relaxed font-light">
+                    Mewujudkan bangunan impian yang memukau, optimal, dan estetis dalam suasana kontemplasi damai sejahtera melalui ketepatan rancangan arsitektural dan dukungan peralatan konstruksi berstandar tinggi.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#katalog" class="w-full sm:w-auto orange-grad hover:opacity-95 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-orange-600/30 transition text-center flex items-center justify-center space-x-3">
+                        <i class="fa-solid fa-screwdriver-wrench text-lg"></i>
+                        <span>Lihat Katalog & Draf Harga</span>
+                    </a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20MODULAR%20FORMA%20NATURA,%20saya%20ingin%20berkonsultasi." target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-2xl shadow-xl transition text-center flex items-center justify-center space-x-3">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Konsultasi WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Master Card: RENTAL, DESIGN & BUILD -->
+    <section id="master" class="py-24 bg-twilight-900/90 backdrop-blur-sm border-b border-orange-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-bold uppercase tracking-widest text-xs bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/30">Ekosistem Utama</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-4">RENTAL, DESIGN & BUILD</h2>
+                <p class="text-slate-300 text-base">Sinergi menyeluruh antara perencanaan arsitektural presisi, eksekusi pembangunan bermutu tinggi, dan dukungan penyewaan alat kerja konstruksi terlengkap.</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-twilight-800 via-twilight-700 to-slate-900 text-white p-8 sm:p-14 rounded-3xl border border-orange-500/30 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
+                    <!-- Column 1: Rental -->
+                    <div class="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 orange-grad text-white rounded-2xl flex items-center justify-center text-xl mb-6 shadow-lg">
+                                <i class="fa-solid fa-truck-ramp-box"></i>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-white mb-4">RENTAL</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Penyewaan alat kerja konstruksi bangunan menjadi mitra terpercaya untuk mewujudkan bangunan impian Anda dengan standar kualitas terbaik.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/10 text-orange-400 text-xs font-bold">
+                            <i class="fa-solid fa-check-circle mr-1"></i> Alat & Mesin Terkalibrasi Lengkap
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Design -->
+                    <div class="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 orange-grad text-white rounded-2xl flex items-center justify-center text-xl mb-6 shadow-lg">
+                                <i class="fa-solid fa-pen-ruler"></i>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-white mb-4">DESIGN</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Perancangan konsep tata letak estetis, fungsionalitas ruang yang optimal, penyusunan 3D rendering realistis, serta dokumen gambar kerja (DED) arsitektural lengkap yang memukau dan siap bangun.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/10 text-orange-400 text-xs font-bold">
+                            <i class="fa-solid fa-check-circle mr-1"></i> Multi-Sisi Perspektif & 3D Render
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Build -->
+                    <div class="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 orange-grad text-white rounded-2xl flex items-center justify-center text-xl mb-6 shadow-lg">
+                                <i class="fa-solid fa-helmet-safety"></i>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-white mb-4">BUILD</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Bangun ruang usaha yang fungsional dan estetis bersama MODULAR FORMA NATURA. Berpengalaman menangani pembangunan gedung Sekolah, kantor, klinik, Rumah Sakit Umum hingga gudang industri dengan standar keselamatan kerja yang ketat.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/10 space-y-2 text-xs text-slate-300">
+                            <div class="flex items-start space-x-2">
+                                <i class="fa-solid fa-check text-orange-400 mt-0.5"></i>
+                                <span>Manajemen proyek terintegrasi dengan laporan progres mingguan.</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fa-solid fa-check text-orange-400 mt-0.5"></i>
+                                <span>Tim arsitek dan sipil bersertifikat.</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fa-solid fa-check text-orange-400 mt-0.5"></i>
+                                <span>Efisiensi waktu pengerjaan agar bisnis dapat beroperasi sesuai rencana anda.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. KATALOG ALAT & MESIN KONSTRUKSI (Lengkap dengan Harga Tepat, Operator, Setting, & Scaffolding Baru) -->
+    <section id="katalog" class="py-24 bg-twilight-800/60 border-b border-orange-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-orange-400 font-bold uppercase tracking-widest text-xs bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/30">Katalog & Draf Harga Sewa</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Pilihan Alat Kerja & Mesin Konstruksi</h2>
+                <p class="text-slate-300 text-sm mt-2">Draf simulasi harga sewa harian, mingguan, bulanan beserta opsi operator dan biaya setting alat/pipa.</p>
+            </div>
+
+            <!-- Live Search Bar -->
+            <div class="max-w-xl mx-auto mb-16">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-orange-400">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </span>
+                    <input type="text" id="searchInput" onkeyup="filterCatalog()" placeholder="Cari alat (misal: bar bending, corlift, pompa kodok, scaffolding)..." class="w-full pl-12 pr-4 py-4 bg-twilight-900 border-2 border-orange-500/30 rounded-2xl shadow-xl focus:outline-none focus:border-orange-500 font-medium text-slate-100 text-sm placeholder-slate-400">
+                </div>
+            </div>
+
+            <!-- Grid Katalog Alat & Mesin -->
+            <div id="catalogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 1. Mesin Bar Bending -->
+                <div class="catalog-card bg-twilight-900 border border-orange-500/20 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between" data-name="mesin bar bending penekuk besi ulir">
+                    <div>
+                        <div class="h-52 overflow-hidden relative bg-slate-950">
+                            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=800" alt="Mesin Bar Bending" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 orange-grad text-white text-xs font-bold px-3 py-1 rounded-full shadow">Bar Bending</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Mesin Bar Bending</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">Mesin penekuk besi ulir dengan kapasitas maksimal besi ulir 21 mm untuk pembentukan struktur rangka beton bertulang yang presisi.</p>
+                            <div class="text-xs font-semibold text-orange-400 mb-2">Tarif Dasar: Rp 500.000 / hari</div>
+                        </div>
+                    </div>
+                    <div class="bg-twilight-800/80 p-6 border-t border-orange-500/20">
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-orange-400 mb-3"><i class="fa-solid fa-file-invoice-dollar mr-1"></i> Draf Simulasi Harga Sewa</h4>
+                        <div class="space-y-3 text-xs text-slate-200">
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1">Durasi Sewa:</label>
+                                <select id="dur-1" onchange="calcPrice(1, 500000, 3000000, 10500000, 150000, 0, 0)" class="w-full p-2 bg-twilight-900 border border-orange-500/30 rounded-xl font-medium text-slate-100">
+                                    <option value="daily">Harian (Rp 500.000 / hari)</option>
+                                    <option value="weekly">Mingguan (Rp 3.000.000 / minggu)</option>
+                                    <option value="monthly">Bulanan (Rp 10.500.000 / bulan)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1">Wilayah Proyek:</label>
+                                <select id="loc-1" onchange="calcPrice(1, 500000, 3000000, 10500000, 150000, 0, 0)" class="w-full p-2 bg-twilight-900 border border-orange-500/30 rounded-xl font-medium text-slate-100">
+                                    <option value="incity">Dalam Kota (Tanpa Biaya Mobilisasi)</option>
+                                    <option value="outcity">Kabupaten / Kota Lain (+Mobilisasi)</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center space-x-2 pt-1">
+                                <input type="checkbox" id="op-1" onchange="calcPrice(1, 500000, 3000000, 10500000, 150000, 0, 0)" class="w-4 h-4 text-orange-600 rounded bg-twilight-900 border-orange-500">
+                                <label for="op-1" class="font-medium text-slate-300">Tambah Operator Ahli (+Rp 150.000/hari)</label>
+                            </div>
+                            <div class="pt-3 border-t border-orange-500/20 flex items-center justify-between">
+                                <span class="font-bold text-slate-300">Total Estimasi:</span>
+                                <span id="tot-1" class="text-base font-extrabold text-orange-400">Rp 500.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Mesin Corlift -->
+                <div class="catalog-card bg-twilight-900 border border-orange-500/20 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between" data-name="mesin corlift pengantar beton 4 lantai setting operator">
+                    <div>
+                        <div class="h-52 overflow-hidden relative bg-slate-950">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f15f9?auto=format&fit=crop&q=80&w=800" alt="Mesin Corlift" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 orange-grad text-white text-xs font-bold px-3 py-1 rounded-full shadow">Corlift</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Mesin Corlift</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">Mesin pengantar beton dari lantai dasar ke lantai 4 (max 21 meter jangkauan). Tarif dasar: Rp 2.500.000 / hari.</p>
+                            <div class="text-xs font-semibold text-orange-400 mb-2">Operator: Rp 350.000/hr | Setting: Rp 500.000</div>
+                        </div>
+                    </div>
+                    <div class="bg-twilight-800/80 p-6 border-t border-orange-500/20">
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-orange-400 mb-3"><i class="fa-solid fa-file-invoice-dollar mr-1"></i> Draf Simulasi Harga Sewa</h4>
+                        <div class="space-y-3 text-xs text-slate-200">
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1">Durasi Sewa:</label>
+                                <select id="dur-2" onchange="calcPrice(2, 2500000, 16000000, 55000000, 350000, 500000, 0)" class="w-full p-2 bg-twilight-900 border border-orange-500/30 rounded-xl font-medium text-slate-100">
+                                    <option value="daily">Harian (Rp 2.500.000 / hari)</option>
+                                    <option value="weekly">Mingguan (Rp 16.000.000 / minggu)</option>
+                                    <option value="monthly">Bulanan (Rp 55.000.000 / bulan)</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center space-x-2 pt-1">
+                                <input type="checkbox" id="op-2" checked onchange="calcPrice(2, 2500000, 16000000, 55000000, 350000, 500000, 0)" class="w-4 h-4 text-orange-600 rounded bg-twilight-900 border-orange-500">
+                                <label for="op-2" class="font-medium text-slate-300">Termasuk Operator (+Rp 350.000/hari)</label>
+                            </div>
+                            <div class="flex items-center space-x-2 pt-1">
+                                <input type="checkbox" id="set-2" checked onchange="calcPrice(2, 2500000, 16000000, 55000000, 350000, 500000, 0)" class="w-4 h-4 text-orange-600 rounded bg-twilight-900 border-orange-500">
+                                <label for="set-2" class="font-medium text-slate-300">Setting Set Peralatan (+Rp 500.000 sekali)</label>
+                            </div>
+                            <div class="pt-3 border-t border-orange-500/20 flex items-center justify-between">
+                                <span class="font-bold text-slate-300">Total Estimasi:</span>
+                                <span id="tot-2" class="text-base font-extrabold text-orange-400">Rp 3.350.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Pompa Kodok / Concrete Pump (C.Pump) -->
+                <div class="catalog-card bg-twilight-900 border border-orange-500/20 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between" data-name="pompa kodok concrete pump c pump pipa 4 5 inch setting">
+                    <div>
+                        <div class="h-52 overflow-hidden relative bg-slate-950">
+                            <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&q=80&w=800" alt="Concrete Pump" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 orange-grad text-white text-xs font-bold px-3 py-1 rounded-full shadow">Concrete Pump</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Pompa Kodok / Concrete Pump</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">Pompa beton dengan penyediaan Pipa 4" dan 5" untuk bidang vertikal/horizontal (30m). Tarif dasar: Rp 8.000.000 / hari.</p>
+                            <div class="text-xs font-semibold text-orange-400 mb-2">Operator: Rp 1.500.000/hr | Setting Pipa: Rp 1.500.000</div>
+                        </div>
+                    </div>
+                    <div class="bg-twilight-800/80 p-6 border-t border-orange-500/20">
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-orange-400 mb-3"><i class="fa-solid fa-file-invoice-dollar mr-1"></i> Draf Simulasi Harga Sewa</h4>
+                        <div class="space-y-3 text-xs text-slate-200">
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1">Durasi Sewa:</label>
+                                <select id="dur-3" onchange="calcPrice(3, 8000000, 52000000, 180000000, 1500000, 1500000, 0)" class="w-full p-2 bg-twilight-900 border border-orange-500/30 rounded-xl font-medium text-slate-100">
+                                    <option value="daily">Harian (Rp 8.000.000 / hari)</option>
+                                    <option value="weekly">Mingguan (Rp 52.000.000 / minggu)</option>
+                                    <option value="monthly">Bulanan (Rp 180.000.000 / bulan)</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center space-x-2 pt-1">
+                                <input type="checkbox" id="op-3" checked onchange="calcPrice(3, 8000000, 52000000, 180000000, 1500000, 1500000, 0)" class="w-4 h-4 text-orange-600 rounded bg-twilight-900 border-orange-500">
+                                <label for="op-3" class="font-medium text-slate-300">Termasuk Operator (+Rp 1.500.000/hari)</label>
+                            </div>
+                            <div class="flex items-center space-x-2 pt-1">
+                                <input type="checkbox" id="set-3" checked onchange="calcPrice(3, 8000000, 52000000, 180000000, 1500000, 1500000, 0)" class="w-4 h-4 text-orange-600 rounded bg-twilight-900 border-orange-500">
+                                <label for="set-3" class="font-medium text-slate-300">Setting Set Pipa 4" & 5" (+Rp 1.500.000)</label>
+                            </div>
+                            <div class="pt-3 border-t border-orange-500/20 flex items-center justify-between">
+                                <span class="font-bold text-slate-300">Total Estimasi:</span>
+                                <span id="tot-3" class="text-base font-extrabold text-orange-400">Rp 11.000.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Mesin Trowel Lantai Cor -->
+                <div class="catalog-card bg-twilight-900 border border-orange-500/20 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between" data-name="mesin trowel lantai cor perataan">
+                    <div>
+                        <div class="h-52 overflow-hidden relative bg-slate-950">
+                            <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&q=80&w=800" alt="Mesin Trowel" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 orange-grad text-white text-xs font-bold px-3 py-1 rounded-full shadow">Mesin Trowel</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Mesin Trowel Lantai Cor</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">Mesin Trowel Lantai Cor dengan presisi kerataan lantai sempurna. Tarif dasar: Rp 400.000 / hari.</p>
+                            <div class="text-xs font-semibold text-orange-400 mb-2">Operator: Rp 200.000 / hari</div>
+                        </div>
+                    </div>
+                    <div class="bg-twilight-800/80 p-6 border-t border-orange-500/20">
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-orange-400 mb-3"><i class="fa-solid fa-file-invoice-dollar mr-1"></i> Draf Simulasi Harga Sewa</h4>
+                        <div class="space-y-3 text-xs text-slate-200">
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1">Durasi Sewa:</label>
+                                <select id="dur-4" onchange="calcPrice(4, 400000, 2400000, 8500000, 200000, 0, 0)" class="w-full p-2 bg-twilight-900 border border-orange-500/30 rounded-xl font-medium text-slate-100">
+                                    <option value="daily">Harian (Rp 400.000 / hari)</option>
+                                    <option value="weekly">Mingguan (Rp 2.400.000 / minggu)</option>
+                                    <option value="monthly">Bulanan (Rp 8.500.000 / bulan)</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center space-x-2 pt-1">
+                                <input type="checkbox" id="op-4" checked onchange="calcPrice(4, 400000, 2400000, 8500000, 200000, 0, 0)" class="w-4 h-4 text-orange-600 rounded bg-twilight-900 border-orange-500">
+                                <label for="op-4" class="font-medium text-slate-300">Termasuk Operator (+Rp 200.000/hari)</label>
+                            </div>
+                            <div class="pt-3 border-t border-orange-500/20 flex items-center justify-between">
+                                <span class="font-bold text-slate-300">Total Estimasi:</span>
+                                <span id="tot-4" class="text-base font-extrabold text-orange-400">Rp 600.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Alat Ukur Surveyor & Leveling -->
+                <div class="catalog-card bg-twilight-900 border border-orange-500/20 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between" data-name="alat ukur surveyor dan leveling akurasi tinggi">
+                    <div>
+                        <div class="h-52 overflow-hidden relative bg-slate-950">
+                            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=800" alt="Surveyor & Leveling" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 orange-grad text-white text-xs font-bold px-3 py-1 rounded-full shadow">Surveyor & Leveling</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Alat Ukur Surveyor & Leveling</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">Alat ukur surveyor dan leveling dengan akurasi tinggi. Tarif dasar: Rp 850.000 / hari.</p>
+                            <div class="text-xs font-semibold text-orange-400 mb-2">Operator: Rp 400.000 / hari</div>
+                        </div>
+                    </div>
+                    <div class="bg-twilight-800/80 p-6 border-t border-orange-500/20">
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-orange-400 mb-3"><i class="fa-solid fa-file-invoice-dollar mr-1"></i> Draf Simulasi Harga Sewa</h4>
+                        <div class="space-y-3 text-xs text-slate-200">
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1">Durasi Sewa:</label>
+                                <select id="dur-5" onchange="calcPrice(5, 850000, 5500000, 19000000, 400000, 0, 0)" class="w-full p-2 bg-twilight-900 border border-orange-500/30 rounded-xl font-medium text-slate-100">
+                                    <option value="daily">Harian (Rp 850.000 / hari)</option>
+                                    <option value="weekly">Mingguan (Rp 5.500.000 / minggu)</option>
+                                    <option value="monthly">Bulanan (Rp 19.000.000 / bulan)</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center space-x-2 pt-1">
+                                <input type="checkbox" id="op-5" checked onchange="calcPrice(5, 850000, 5500000, 19000000, 400000, 0, 0)" class="w-4 h-4 text-orange-600 rounded bg-twilight-900 border-orange-500">
+                                <label for="op-5" class="font-medium text-slate-300">Termasuk Surveyor/Operator (+Rp 400.000/hari)</label>
+                            </div>
+                            <div class="pt-3 border-t border-orange-500/20 flex items-center justify-between">
+                                <span class="font-bold text-slate-300">Total Estimasi:</span>
+                                <span id="tot-5" class="text-base font-extrabold text-orange-400">Rp 1.250.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Scaffolding Set (NEW) -->
+                <div class="catalog-card bg-twilight-900 border-2 border-orange-500 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between relative" data-name="scaffolding set mainframe 90 170 jack base u base">
+                    <span class="absolute top-3 left-3 z-10 orange-grad text-white text-xs font-bold px-3 py-1 rounded-full shadow">Baru (Set Lengkap)</span>
+                    <div>
+                        <div class="h-52 overflow-hidden relative bg-slate-950">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f15f9?auto=format&fit=crop&q=80&w=800" alt="Scaffolding Set" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Scaffolding Set Lengkap</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">Mainframe 90 & 170, Jack Base, dan U Base / U Head. Harga sewa lengkap: Rp 25.000 / set / hari.</p>
+                            <div class="text-xs font-semibold text-orange-400 mb-2">Tarif: Rp 25.000 / set / hari</div>
+                        </div>
+                    </div>
+                    <div class="bg-twilight-800/80 p-6 border-t border-orange-500/20">
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-orange-400 mb-3"><i class="fa-solid fa-file-invoice-dollar mr-1"></i> Draf Simulasi Harga Sewa</h4>
+                        <div class="space-y-3 text-xs text-slate-200">
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1">Jumlah Set & Durasi:</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <input type="number" id="qty-6" value="10" min="1" onchange="calcScaffolding()" class="p-2 bg-twilight-900 border border-orange-500/30 rounded-xl font-medium text-slate-100" placeholder="Jumlah Set">
+                                    <select id="dur-6" onchange="calcScaffolding()" class="p-2 bg-twilight-900 border border-orange-500/30 rounded-xl font-medium text-slate-100">
+                                        <option value="1">1 Hari (Rp 25.000/set)</option>
+                                        <option value="7">7 Hari (Rp 175.000/set)</option>
+                                        <option value="30">30 Hari (Rp 750.000/set)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="pt-3 border-t border-orange-500/20 flex items-center justify-between">
+                                <span class="font-bold text-slate-300">Total Estimasi:</span>
+                                <span id="tot-6" class="text-base font-extrabold text-orange-400">Rp 2.500.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Mesin Vibrator & Pompa Celup -->
+                <div class="catalog-card bg-twilight-900 border border-orange-500/20 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between" data-name="vibrator diesel listrik pompa celup jack hammer gerinda bor">
+                    <div>
+                        <div class="h-52 overflow-hidden relative bg-slate-950">
+                            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=800" alt="Vibrator & Pompa" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 orange-grad text-white text-xs font-bold px-3 py-1 rounded-full shadow">Alat Pendukung</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Vibrator, Pompa Celup & Jack Hammer</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">Vibrator Diesel (kolom 4m), Vibrator Listrik (plat 2m), Pompa Celup BorPile, Jack Hammer pembobok beton, Gerinda & Bor tukang.</p>
+                            <div class="text-xs font-semibold text-orange-400 mb-2">Tarif Mulai: Rp 150.000 / hari</div>
+                        </div>
+                    </div>
+                    <div class="bg-twilight-800/80 p-6 border-t border-orange-500/20">
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-orange-400 mb-3"><i class="fa-solid fa-file-invoice-dollar mr-1"></i> Draf Simulasi Harga Sewa</h4>
+                        <div class="space-y-3 text-xs text-slate-200">
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1">Pilih Jenis Alat:</label>
+                                <select id="tool-7" onchange="calcTool7()" class="w-full p-2 bg-twilight-900 border border-orange-500/30 rounded-xl font-medium text-slate-100">
+                                    <option value="200000">Vibrator Diesel / Listrik (Rp 200.000/hr)</option>
+                                    <option value="180000">Pompa Celup BorPile (Rp 180.000/hr)</option>
+                                    <option value="250000">Jack Hammer Tinggi (Rp 250.000/hr)</option>
+                                    <option value="150000">Mesin Bor / Gerinda Tukang (Rp 150.000/hr)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1">Durasi Sewa:</label>
+                                <select id="dur-7" onchange="calcTool7()" class="w-full p-2 bg-twilight-900 border border-orange-500/30 rounded-xl font-medium text-slate-100">
+                                    <option value="1">Harian (1 Hari)</option>
+                                    <option value="7">Mingguan (7 Hari)</option>
+                                    <option value="30">Bulanan (30 Hari)</option>
+                                </select>
+                            </div>
+                            <div class="pt-3 border-t border-orange-500/20 flex items-center justify-between">
+                                <span class="font-bold text-slate-300">Total Estimasi:</span>
+                                <span id="tot-7" class="text-base font-extrabold text-orange-400">Rp 200.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SYARAT & KETENTUAN PENYEWAAN (Rental Terms & Conditions) -->
+    <section id="ketentuan" class="py-24 bg-twilight-900/90 backdrop-blur-sm border-b border-orange-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-bold uppercase tracking-widest text-xs bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/30">Regulasi Operasional</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Syarat & Ketentuan Penyewaan</h2>
+                <p class="text-slate-300 text-sm mt-2">Harap membaca ketentuan pemesanan, jam operasional, kebijakan denda, serta klaim perbaikan alat dengan cermat.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-6 shadow">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Jam Kerja & Booking H-2</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Pemesanan atau sewa alat konstruksi dilayani pada hari kerja <strong class="text-orange-400">Senin - Sabtu pukul 08:00 - 16:00 WITA</strong>. Pengajuan pemesanan wajib dilakukan minimal <strong class="text-orange-400">H-2</strong> sebelum jadwal mobilisasi alat ke lokasi proyek.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-6 shadow">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Denda Keterlambatan</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Keterlambatan pengembalian peralatan dari durasi kontrak sewa yang disepakati akan dikenakan <strong class="text-orange-400">denda keterlambatan sebesar 150%</strong> dari tarif sewa harian per hari keterlambatan tanpa terkecuali.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-6 shadow">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Kebijakan Klaim & Kerusakan</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Perbaikan atau penukaran peralatan dapat di-claim setelah hari pertama sewa dan maksimal <strong class="text-orange-400">3 hari</strong> setelah pemesanan. Jika sudah lewat dari 3 hari, segala bentuk kerusakan peralatan di lapangan ditanggung penuh <strong class="text-orange-400">100% oleh pihak penyewa</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. INTERACTIVE FAQ (PERTANYAAN UMUM ANTARA CLIENT & ADMIN) -->
+    <section id="faq" class="py-24 bg-twilight-800/60 border-b border-orange-500/10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-bold uppercase tracking-widest text-xs bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/30">Pusat Informasi</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Pertanyaan Umum (FAQ)</h2>
+                <p class="text-slate-300 text-sm mt-2">Dialog interaktif antara Klien dan Admin Perusahaan mengenai prosedur sewa, kondisi alat, dan panduan operasional.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-twilight-900 border border-orange-500/20 rounded-2xl overflow-hidden shadow-lg">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left font-bold text-white flex items-center justify-between focus:outline-none hover:bg-white/5 transition">
+                        <span class="flex items-center space-x-3 text-sm sm:text-base">
+                            <span class="w-8 h-8 rounded-xl orange-grad text-white flex items-center justify-center text-xs flex-shrink-0">Q</span>
+                            <span>Bagaimana prosedur pemesanan alat sewa di MODULAR FORMA NATURA?</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-orange-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/5">
+                        <p class="pt-4"><strong class="text-orange-400">Admin:</strong> Pemesanan dilakukan pada Hari Kerja Senin s.d. Sabtu (08:00 - 16:00 WITA) minimal H-2 melalui WhatsApp resmi kami. Klien mengisi formulir durasi sewa, wilayah proyek, serta konfirmasi operator jika diperlukan.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item bg-twilight-900 border border-orange-500/20 rounded-2xl overflow-hidden shadow-lg">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left font-bold text-white flex items-center justify-between focus:outline-none hover:bg-white/5 transition">
+                        <span class="flex items-center space-x-3 text-sm sm:text-base">
+                            <span class="w-8 h-8 rounded-xl orange-grad text-white flex items-center justify-center text-xs flex-shrink-0">Q</span>
+                            <span>Apakah harga sewa sudah termasuk operator dan biaya setting alat?</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-orange-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/5">
+                        <p class="pt-4"><strong class="text-orange-400">Admin:</strong> Tergantung pada jenis alatnya. Untuk Corlift dan Concrete Pump, tarif dasar belum termasuk biaya operator serta setting peralatan/pipa (disediakan opsi tambahannya di kalkulator katalog kami agar transparan).</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item bg-twilight-900 border border-orange-500/20 rounded-2xl overflow-hidden shadow-lg">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left font-bold text-white flex items-center justify-between focus:outline-none hover:bg-white/5 transition">
+                        <span class="flex items-center space-x-3 text-sm sm:text-base">
+                            <span class="w-8 h-8 rounded-xl orange-grad text-white flex items-center justify-center text-xs flex-shrink-0">Q</span>
+                            <span>Bagaimana ketentuan klaim jika alat mengalami kendala di proyek?</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-orange-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/5">
+                        <p class="pt-4"><strong class="text-orange-400">Admin:</strong> Klaim perbaikan atau penukaran alat dapat dilakukan setelah hari pertama sewa dan maksimal 3 hari setelah pemesanan. Setelah melewati 3 hari, segala kerusakan di lapangan menjadi tanggung jawab penuh 100% pihak penyewa.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item bg-twilight-900 border border-orange-500/20 rounded-2xl overflow-hidden shadow-lg">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left font-bold text-white flex items-center justify-between focus:outline-none hover:bg-white/5 transition">
+                        <span class="flex items-center space-x-3 text-sm sm:text-base">
+                            <span class="w-8 h-8 rounded-xl orange-grad text-white flex items-center justify-center text-xs flex-shrink-0">Q</span>
+                            <span>Apakah tersedia paket layanan gabungan Design & Build beserta rental alat?</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-orange-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/5">
+                        <p class="pt-4"><strong class="text-orange-400">Admin:</strong> Ya! Kami melayani solusi terpadu mulai dari perancangan arsitektur (DED 3D), pembangunan fisik gedung (sekolah, rumah sakit, komersial), hingga penyediaan alat berat dan scaffolding lengkap.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. DESIGN ARSITEKTURAL (Render 3D & Sisi Perspektif) -->
+    <section id="design" class="py-24 bg-twilight-900/90 backdrop-blur-sm border-b border-orange-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-bold uppercase tracking-widest text-xs bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/30">Divisi Perencanaan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Design Arsitektural & Render 3D</h2>
+                <p class="text-slate-300 text-sm mt-2">Jelajahi multi-sisi sudut pandang arsitektural mulai dari tampak depan, samping, atas, hingga perspektif 3D isometrik.</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-twilight-800 via-twilight-700 to-slate-900 p-6 sm:p-10 rounded-3xl shadow-2xl border border-orange-500/30 text-white">
+                <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+                    <button onclick="switchDesignTab('depan')" id="btn-depan" class="design-tab px-6 py-3 rounded-2xl font-bold text-xs uppercase tracking-wider transition bg-orange-600 text-white shadow-lg">
+                        <i class="fa-solid fa-eye mr-2"></i> Tampak Depan
+                    </button>
+                    <button onclick="switchDesignTab('samping')" id="btn-samping" class="design-tab px-6 py-3 rounded-2xl font-bold text-xs uppercase tracking-wider transition bg-white/10 hover:bg-white/20 text-slate-300">
+                        <i class="fa-solid fa-arrows-left-right mr-2"></i> Tampak Samping
+                    </button>
+                    <button onclick="switchDesignTab('atas')" id="btn-atas" class="design-tab px-6 py-3 rounded-2xl font-bold text-xs uppercase tracking-wider transition bg-white/10 hover:bg-white/20 text-slate-300">
+                        <i class="fa-solid fa-layer-group mr-2"></i> Tampak Atas (Layout)
+                    </button>
+                    <button onclick="switchDesignTab('perspektif')" id="btn-perspektif" class="design-tab px-6 py-3 rounded-2xl font-bold text-xs uppercase tracking-wider transition bg-white/10 hover:bg-white/20 text-slate-300">
+                        <i class="fa-solid fa-cube mr-2"></i> Perspektif 3D / Isometrik
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-twilight-900/90 p-6 sm:p-8 rounded-2xl border border-white/10">
+                    <div class="h-80 sm:h-96 rounded-2xl overflow-hidden relative shadow-inner bg-slate-950">
+                        <img id="designImage" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" alt="Design View" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-4 left-4 bg-twilight-900/90 backdrop-blur-md px-4 py-2 rounded-xl border border-orange-500/30 text-xs font-bold text-orange-400">
+                            <span id="designBadge">Tampak Depan Utama Gedung</span>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center space-x-2 bg-orange-500/20 text-orange-300 px-3 py-1 rounded-lg text-xs font-bold">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>DED Bersertifikat & Realistis</span>
+                        </div>
+                        <h3 id="designTitle" class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                            Tampak Depan Fasad Modern Minimalis
+                        </h3>
+                        <p id="designDesc" class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Visualisasi fasad depan dengan material kaca tempered reflektif, panel komposit aluminium eksterior tahan cuaca, serta pencahayaan arsitektural terintegrasi yang menghadirkan prestise profesional.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-orange-400"></i> <span>Kesesuaian tata ruang publik & sirkulasi udara optimal</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-orange-400"></i> <span>Perhitungan beban struktur akurat oleh insinyur sipil</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. TAHAPAN PEMBANGUNAN STRUKTUR GEDUNG (Basement -> L.1 -> L.2 -> L.3 + Lift) - STRICTLY NO "SIMULASI" -->
+    <section id="pembangunan" class="py-24 bg-twilight-800/60 border-b border-orange-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-bold uppercase tracking-widest text-xs bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/30">Divisi Konstruksi Bangunan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Tahapan Pembangunan Struktur Gedung</h2>
+                <p class="text-slate-300 text-sm mt-2">Penerapan standar kerja konstruksi bertahap tampak depan mulai dari Basement, Lantai 1, Lantai 2, Lantai 3, hingga Instalasi Lift.</p>
+            </div>
+
+            <div class="bg-twilight-900 p-6 sm:p-10 rounded-3xl shadow-2xl border border-orange-500/30">
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-8">
+                    <button onclick="setBuildStep(1)" id="step-btn-1" class="step-btn py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition bg-orange-600 text-white shadow">
+                        1. Basement
+                    </button>
+                    <button onclick="setBuildStep(2)" id="step-btn-2" class="step-btn py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition bg-white/10 hover:bg-white/20 text-slate-300">
+                        2. Lantai 1
+                    </button>
+                    <button onclick="setBuildStep(3)" id="step-btn-3" class="step-btn py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition bg-white/10 hover:bg-white/20 text-slate-300">
+                        3. Lantai 2
+                    </button>
+                    <button onclick="setBuildStep(4)" id="step-btn-4" class="step-btn py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition bg-white/10 hover:bg-white/20 text-slate-300">
+                        4. Lantai 3
+                    </button>
+                    <button onclick="setBuildStep(5)" id="step-btn-5" class="step-btn py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition bg-white/10 hover:bg-white/20 text-slate-300 col-span-2 sm:col-span-1">
+                        5. Lift & Finishing
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-twilight-800/80 p-6 sm:p-8 rounded-2xl border border-orange-500/20">
+                    <div class="h-80 sm:h-96 rounded-2xl overflow-hidden relative shadow bg-slate-950 flex items-center justify-center">
+                        <img id="buildImage" src="https://images.unsplash.com/photo-1541888946425-d0fbb18f15f9?auto=format&fit=crop&q=80&w=1000" alt="Build Step" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute top-4 right-4 orange-grad text-white font-extrabold px-4 py-2 rounded-xl text-xs shadow-lg">
+                            <span id="buildStepBadge">Tahap 1 dari 5</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <span id="buildPhaseTag" class="text-orange-400 font-extrabold uppercase tracking-widest text-xs bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/30">Pekerjaan Struktur Bawah</span>
+                        <h3 id="buildTitle" class="text-2xl sm:text-3xl font-extrabold text-white">
+                            Pekerjaan Galian & Struktur Basement
+                        </h3>
+                        <p id="buildDesc" class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Tahap awal dimulai dengan pembukaan lahan, pemasangan pompa celup untuk area basah, pekerjaan BorPile, serta pengecoran dinding penahan tanah basement dengan kekuatan beton bertulang tinggi.
+                        </p>
+                        <div class="bg-twilight-900 p-4 rounded-xl border border-orange-500/30 text-xs text-slate-300 space-y-1">
+                            <p class="font-bold text-white">Alat Utama yang Dilibatkan:</p>
+                            <p id="buildTools" class="text-orange-400 font-medium">Mesin Pompa Celup, Alat Ukur Surveyor & Leveling, Jack Hammer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. PORTOFOLIO PERUSAHAAN -->
+    <section id="portofolio" class="py-24 bg-twilight-900/90 backdrop-blur-sm border-b border-orange-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-bold uppercase tracking-widest text-xs bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/30">Rekam Jejak Proyek</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Portofolio Perusahaan</h2>
+                <p class="text-slate-300 text-sm mt-2">Dokumentasi hasil karya konstruksi nyata yang telah diselesaikan dengan standar kualitas tertinggi oleh MODULAR FORMA NATURA.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Portofolio 1 -->
+                <div class="bg-twilight-800 border border-orange-500/20 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=800" alt="Rumah Sakit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-twilight-900/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full border border-orange-500/30">Kesehatan</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Rumah Sakit Umum Daerah</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">Pembangunan gedung fasilitas medis 4 lantai lengkap dengan instalasi gas medis dan standar ruang sterilisasi ketat.</p>
+                    </div>
+                </div>
+
+                <!-- Portofolio 2 -->
+                <div class="bg-twilight-800 border border-orange-500/20 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800" alt="Sekolah" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-twilight-900/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full border border-orange-500/30">Pendidikan</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Gedung Sekolah Modern</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">Konstruksi kompleks ruang kelas bertingkat, laboratorium sains, dan aula serbaguna dengan sirkulasi cahaya optimal.</p>
+                    </div>
+                </div>
+
+                <!-- Portofolio 3 -->
+                <div class="bg-twilight-800 border border-orange-500/20 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="Kantor" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-twilight-900/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full border border-orange-500/30">Komersial</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Gedung Perkantoran Bisnis</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">Perancangan arsitektur dan pembangunan struktur baja & beton komposit perkantoran prestisius di pusat kota.</p>
+                    </div>
+                </div>
+
+                <!-- Portofolio 4 -->
+                <div class="bg-twilight-800 border border-orange-500/20 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" alt="Gudang Industri" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-twilight-900/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full border border-orange-500/30">Industri</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Gudang Industri & Logistik</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">Penyediaan struktur bentang lebar dan pengecoran lantai beton heavy-duty tahan beban berat truk kontainer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. SERTIFIKASI K3 -->
+    <section id="k3" class="py-24 bg-twilight-800/60 border-b border-orange-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-bold uppercase tracking-widest text-xs bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/30">Standar Keselamatan Kerja</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Sertifikasi Perlengkapan Keselamatan Pekerja (K3)</h2>
+                <p class="text-slate-300 text-sm mt-2">Keselamatan dan kesehatan kerja (K3) adalah prioritas mutlak dalam setiap proyek konstruksi yang kami tangani.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- K3 1 -->
+                <div class="bg-twilight-900 p-6 rounded-3xl border border-orange-500/20 shadow-xl text-center flex flex-col items-center">
+                    <div class="w-16 h-16 orange-grad text-white rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-md">
+                        <i class="fa-solid fa-hard-hat"></i>
+                    </div>
+                    <h3 class="text-base font-extrabold text-white mb-2">Helm Safety SNI</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Pelindung kepala bersertifikat SNI tahan benturan tinggi untuk seluruh personil di lapangan.</p>
+                </div>
+
+                <!-- K3 2 -->
+                <div class="bg-twilight-900 p-6 rounded-3xl border border-orange-500/20 shadow-xl text-center flex flex-col items-center">
+                    <div class="w-16 h-16 orange-grad text-white rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-md">
+                        <i class="fa-solid fa-vest"></i>
+                    </div>
+                    <h3 class="text-base font-extrabold text-white mb-2">Rompi High-Vis</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Rompi pengaman dengan strip pemantul cahaya untuk visibilitas optimal pekerja.</p>
+                </div>
+
+                <!-- K3 3 -->
+                <div class="bg-twilight-900 p-6 rounded-3xl border border-orange-500/20 shadow-xl text-center flex flex-col items-center">
+                    <div class="w-16 h-16 orange-grad text-white rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-md">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+                    <h3 class="text-base font-extrabold text-white mb-2">Sepatu Steel Toe</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Sepatu pelindung berujung baja anti tusuk dan anti slip untuk keamanan pijakan di area proyek.</p>
+                </div>
+
+                <!-- K3 4 -->
+                <div class="bg-twilight-900 p-6 rounded-3xl border border-orange-500/20 shadow-xl text-center flex flex-col items-center">
+                    <div class="w-16 h-16 orange-grad text-white rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-md">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-base font-extrabold text-white mb-2">Full Body Harness</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Sabuk pengaman kerja ketinggian standar internasional untuk pekerjaan struktur vertikal.</p>
+                </div>
+
+                <!-- K3 5 -->
+                <div class="bg-twilight-900 p-6 rounded-3xl border border-orange-500/20 shadow-xl text-center flex flex-col items-center">
+                    <div class="w-16 h-16 orange-grad text-white rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-md">
+                        <i class="fa-solid fa-masks-theater"></i>
+                    </div>
+                    <h3 class="text-base font-extrabold text-white mb-2">Pelindung Pernafasan</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Masker industri khusus debu semen, material berat, dan gas kimia konstruksi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. TIM KERJA SPESIALIS -->
+    <section id="tim" class="py-24 bg-twilight-900/90 backdrop-blur-sm border-b border-orange-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-bold uppercase tracking-widest text-xs bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/30">Sumber Daya Manusia</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Tim Kerja Spesialis Konstruksi</h2>
+                <p class="text-slate-300 text-sm mt-2">Didukung oleh para ahli berpengalaman bersertifikat di setiap divisi keahlian untuk memastikan hasil pengerjaan tepat mutu dan waktu.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-4 shadow">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white mb-2">Team Struktur</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Insinyur sipil dan tukang ahli cor beton bertulang, pembesian, serta perancangan ketahanan beban utama gedung.</p>
+                </div>
+
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-4 shadow">
+                        <i class="fa-solid fa-paint-roller"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white mb-2">Team Finishing</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Spesialis perataan lantai trowel, pengecatan dinding, pemasangan keramik presisi, dan estetika akhir ruangan.</p>
+                </div>
+
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-4 shadow">
+                        <i class="fa-solid fa-faucet-drip"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white mb-2">Team Plumbing</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Ahli instalasi pipa air bersih, saluran pembuangan sanitasi, dan sistem tekanan air terpadu gedung bertingkat.</p>
+                </div>
+
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-4 shadow">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white mb-2">Team Drainase</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Perancang sistem aliran air hujan, sumur resapan, dan pengelolaan pembuangan air tanah basah proyek.</p>
+                </div>
+
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-4 shadow">
+                        <i class="fa-solid fa-toolbox"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white mb-2">Team Perlengkapan Proyek</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Tim logistik dan pemeliharaan alat berat yang memastikan ketersediaan dan kesiapan mesin sewa di lokasi.</p>
+                </div>
+
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-4 shadow">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white mb-2">Team ME</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Ahli instalasi kelistrikan daya tinggi, panel genset, sistem lift gedung, dan tata udara AC sentral.</p>
+                </div>
+
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-4 shadow">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white mb-2">Team Helper</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Tenaga pendukung operasional lapangan yang sigap membantu kelancaran seluruh proses konstruksi.</p>
+                </div>
+
+                <div class="bg-twilight-800 border border-orange-500/20 p-8 rounded-3xl shadow-xl">
+                    <div class="w-12 h-12 orange-grad text-white rounded-2xl flex items-center justify-center text-lg mb-4 shadow">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white mb-2">Team Surveyor & QC</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">Ahli ukur tanah pemetaan tapak dan pengawas mutu pengujian material konstruksi bersertifikat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. FOOTER / CONTACT -->
+    <footer id="kontak" class="bg-twilight-950 text-white pt-24 pb-16 border-t border-orange-500/20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-center">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 orange-grad rounded-2xl flex items-center justify-center text-white shadow-md">
+                            <i class="fa-solid fa-building-shield text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-lg font-extrabold tracking-tight block">MODULAR FORMA NATURA</span>
+                            <span class="text-xs font-bold orange-text-grad uppercase tracking-wider">RENTAL DESIGN & BUILD</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                        Mitra terpercaya pembangunan fasilitas kesehatan, pendidikan, komersial, serta penyewaan alat kerja konstruksi dengan standar kualitas tertinggi. Langsung terhubung dengan kantor pusat kami tanpa perantara.
+                    </p>
+                    <a href="https://wa.me/6281234567890?text=Halo%20MODULAR%20FORMA%20NATURA,%20saya%20ingin%20berkonsultasi." target="_blank" class="inline-flex items-center space-x-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Hubungi WhatsApp Resmi</span>
+                    </a>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-twilight-900 border-2 border-orange-500 p-6 sm:p-8 rounded-3xl shadow-2xl animate-glow animate-float flex items-center space-x-6">
+                        <div class="w-16 h-16 orange-grad text-white rounded-2xl flex items-center justify-center text-3xl shadow-lg flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-orange-400 block mb-1">KANTOR PUSAT</span>
+                            <h4 class="text-lg sm:text-xl font-extrabold text-white leading-tight">
+                                Jakarta Selatan, Jl. Fatmawati
+                            </h4>
+                        </div>
+                    </div>
+
+                    <div class="bg-twilight-900/80 border border-orange-500/20 p-6 sm:p-8 rounded-3xl shadow-xl flex items-center space-x-6">
+                        <div class="w-16 h-16 bg-twilight-800 text-orange-400 rounded-2xl flex items-center justify-center text-2xl shadow-lg flex-shrink-0">
+                            <i class="fa-solid fa-map-pin"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400 block mb-1">ALAMAT USAHA</span>
+                            <h4 class="text-lg sm:text-xl font-extrabold text-white leading-tight">
+                                Bima, Nusa Tenggara Barat
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-twilight-900 text-center text-slate-400 text-sm">
+                <p>&copy; 2026 MODULAR FORMA NATURA. RENTAL DESIGN & BUILD. Hak Cipta Dilindungi Undang-Undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Live Search Catalog Function
+        function filterCatalog() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.catalog-card');
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name');
+                if (name.includes(query)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        // Format IDR currency
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number);
+        }
+
+        // Draf Simulasi Harga Sewa Calculator (Items 1-5)
+        function calcPrice(id, dailyPrice, weeklyPrice, monthlyPrice, operatorDailyFee, setupFee, mobilFeeBase) {
+            const dur = document.getElementById(`dur-${id}`).value;
+            const locElem = document.getElementById(`loc-${id}`);
+            const loc = locElem ? locElem.value : 'incity';
+            const opCheckbox = document.getElementById(`op-${id}`);
+            const setCheckbox = document.getElementById(`set-${id}`);
+
+            let base = 0;
+            if (dur === 'daily') base = dailyPrice;
+            if (dur === 'weekly') base = weeklyPrice;
+            if (dur === 'monthly') base = monthlyPrice;
+
+            let mobFee = 0;
+            if (loc === 'outcity') {
+                mobFee = dailyPrice * 0.5;
+            }
+
+            let opTotal = 0;
+            if (opCheckbox && opCheckbox.checked) {
+                let days = 1;
+                if (dur === 'weekly') days = 7;
+                if (dur === 'monthly') days = 30;
+                opTotal = operatorDailyFee * days;
+            }
+
+            let setTotal = 0;
+            if (setCheckbox && setCheckbox.checked) {
+                setTotal = setupFee;
+            }
+
+            const total = base + mobFee + opTotal + setTotal;
+            document.getElementById(`tot-${id}`).innerText = formatRupiah(total);
+        }
+
+        // Calculator Item 6: Scaffolding Set
+        function calcScaffolding() {
+            const qty = parseInt(document.getElementById('qty-6').value) || 1;
+            const days = parseInt(document.getElementById('dur-6').value) || 1;
+            const pricePerSetPerDay = 25000;
+            const total = qty * days * pricePerSetPerDay;
+            document.getElementById('tot-6').innerText = formatRupiah(total);
+        }
+
+        // Calculator Item 7: Tools
+        function calcTool7() {
+            const basePrice = parseInt(document.getElementById('tool-7').value) || 200000;
+            const days = parseInt(document.getElementById('dur-7').value) || 1;
+            let multiplier = 1;
+            if (days === 7) multiplier = 6.5;
+            if (days === 30) multiplier = 22;
+            const total = basePrice * multiplier;
+            document.getElementById('tot-7').innerText = formatRupiah(total);
+        }
+
+        // FAQ Accordion Toggle
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const icon = btn.querySelector('i');
+            
+            // Close others
+            document.querySelectorAll('.faq-item').forEach(el => {
+                if (el !== item) {
+                    el.classList.remove('active');
+                    el.querySelector('i').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            item.classList.toggle('active');
+            if (item.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Design Arsitektural Tabs
+        function switchDesignTab(tab) {
+            const tabs = ['depan', 'samping', 'atas', 'perspektif'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`btn-${t}`);
+                if (t === tab) {
+                    btn.className = "design-tab px-6 py-3 rounded-2xl font-bold text-xs uppercase tracking-wider transition bg-orange-600 text-white shadow-lg";
+                } else {
+                    btn.className = "design-tab px-6 py-3 rounded-2xl font-bold text-xs uppercase tracking-wider transition bg-white/10 hover:bg-white/20 text-slate-300";
+                }
+            });
+
+            const img = document.getElementById('designImage');
+            const badge = document.getElementById('designBadge');
+            const title = document.getElementById('designTitle');
+            const desc = document.getElementById('designDesc');
+
+            if (tab === 'depan') {
+                img.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000";
+                badge.innerText = "Tampak Depan Utama Gedung";
+                title.innerText = "Tampak Depan Fasad Modern Minimalis";
+                desc.innerText = "Visualisasi fasad depan dengan material kaca tempered reflektif, panel komposit aluminium eksterior tahan cuaca, serta pencahayaan arsitektural terintegrasi yang menghadirkan prestise profesional.";
+            } else if (tab === 'samping') {
+                img.src = "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=1000";
+                badge.innerText = "Tampak Samping Elegan";
+                title.innerText = "Sirkulasi Udara & Pencahayaan Samping";
+                desc.innerText = "Analisis tampak samping dirancang untuk memastikan bukaan ventilasi alami silang (cross-ventilation), akses darurat eksternal, dan efisiensi termal bangunan secara menyeluruh.";
+            } else if (tab === 'atas') {
+                img.src = "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1000";
+                badge.innerText = "Tampak Atas / Master Plan Layout";
+                title.innerText = "Tata Letak Zonasi & Roof Garden";
+                desc.innerText = "Denah tampak atas memperlihatkan pengaturan tata letak zonasi ruang, area hijau roof garden ekologis, serta jalur sirkulasi kendaraan servis dan parkir yang terintegrasi.";
+            } else if (tab === 'perspektif') {
+                img.src = "https://images.unsplash.com/photo-1541888946425-d0fbb18f15f9?auto=format&fit=crop&q=80&w=1000";
+                badge.innerText = "Perspektif 3D / Isometrik";
+                title.innerText = "Render Isometrik Sudut Pandang Burung (Bird-Eye View)";
+                desc.innerText = "Visualisasi perspektif 3D menyeluruh yang menampilkan proporsi tinggi bangunan, harmoni warna fasad oranye-putih modern, serta kesiapan lanskap lingkungan sekitar.";
+            }
+        }
+
+        // Building Construction Steps (STRICTLY NO "SIMULASI" IN CONSTRUCTION)
+        function setBuildStep(step) {
+            for (let i = 1; i <= 5; i++) {
+                const btn = document.getElementById(`step-btn-${i}`);
+                if (i === step) {
+                    btn.className = "step-btn py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition bg-orange-600 text-white shadow";
+                } else {
+                    btn.className = "step-btn py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition bg-white/10 hover:bg-white/20 text-slate-300";
+                }
+            }
+
+            const img = document.getElementById('buildImage');
+            const badge = document.getElementById('buildStepBadge');
+            const tag = document.getElementById('buildPhaseTag');
+            const title = document.getElementById('buildTitle');
+            const desc = document.getElementById('buildDesc');
+            const tools = document.getElementById('buildTools');
+
+            if (step === 1) {
+                img.src = "https://images.unsplash.com/photo-1541888946425-d0fbb18f15f9?auto=format&fit=crop&q=80&w=1000";
+                badge.innerText = "Tahap 1 dari 5";
+                tag.innerText = "Pekerjaan Struktur Bawah";
+                title.innerText = "Pekerjaan Galian & Struktur Basement";
+                desc.innerText = "Tahap awal dimulai dengan pembukaan lahan, pemasangan pompa celup untuk area basah, pekerjaan BorPile, serta pengecoran dinding penahan tanah basement dengan kekuatan beton bertulang tinggi.";
+                tools.innerText = "Mesin Pompa Celup, Alat Ukur Surveyor & Leveling, Jack Hammer.";
+            } else if (step === 2) {
+                img.src = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000";
+                badge.innerText = "Tahap 2 dari 5";
+                tag.innerText = "Pekerjaan Kolom & Plat Lantai 1";
+                title.innerText = "Konstruksi Lantai 1 & Pengecoran Plat";
+                desc.innerText = "Pemasangan perancah Scaffolding standar SNI, pembentukan rangka besi ulir dengan Mesin Bar Bending, serta pengecoran lantai dasar menggunakan Concrete Pump dan pemadatan dengan Vibrator.";
+                tools.innerText = "Scaffolding Set, Mesin Bar Bending, Concrete Pump Pipa 4\" & 5\", Mesin Trowel Cor, Vibrator Listrik.";
+            } else if (step === 3) {
+                img.src = "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&q=80&w=1000";
+                badge.innerText = "Tahap 3 dari 5";
+                tag.innerText = "Pekerjaan Struktur Lantai 2";
+                title.innerText = "Eskalasi Konstruksi ke Lantai 2";
+                desc.innerText = "Pengangkutan material vertikal menggunakan Cor Lift, perakitan bekisting kolom struktur dengan dukungan Mesin Pendukung Tukang (Gerinda & Bor).";
+                tools.innerText = "Mesin Corlift, Mesin Bar Bending, Vibrator Diesel, Mesin Bor & Gerinda.";
+            } else if (step === 4) {
+                img.src = "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=1000";
+                badge.innerText = "Tahap 4 dari 5";
+                tag.innerText = "Pekerjaan Struktur Lantai 3";
+                title.innerText = "Pencapaian Struktur Utama Lantai 3";
+                desc.innerText = "Penyelesaian pengecoran lantai tertinggi struktur utama, pemeriksaan elevasi akurat dengan alat Surveyor & Leveling, dan pemadatan beton plat menggunakan vibrator.";
+                tools.innerText = "Alat Ukur Surveyor & Leveling, Concrete Pump, Vibrator Listrik, Scaffolding Set.";
+            } else if (step === 5) {
+                img.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000";
+                badge.innerText = "Tahap 5 dari 5";
+                tag.innerText = "Pemasangan Lift & Finishing";
+                title.innerText = "Pemasangan Sistem Lift & Finishing Fasad";
+                desc.innerText = "Instalasi mekanikal elektrikal lift gedung, penghalusan lantai akhir dengan Mesin Trowel Cor, serta pembersihan dan finishing struktur siap huni.";
+                tools.innerText = "Mesin Corlift, Mesin Trowel Lantai Cor, Mesin Pendukung Kerja Tukang.";
+            }
+        }
+    </script>
+</body>
+</html>
